@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .nav {
   height: 60px;
   line-height: 60px;
@@ -29,7 +29,7 @@ export default {
   top: 0;
   z-index: 1;
   position: fixed;
-  background-color: #039be5;
+  background-color: $theme-bck-color;
   box-shadow: 0 2px 5px rgba(0,0,0,.26);
   font-size: 18px;
   display: flex;

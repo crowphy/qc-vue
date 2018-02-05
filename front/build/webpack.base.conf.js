@@ -35,7 +35,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   module: {
@@ -51,16 +51,6 @@ module.exports = {
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
-      // {
-      //    test: /\.scss$/,
-      //    loader:'style!css!sass'
-      // },
-      // {
-      //   loader: 'sass-resources-loader',
-      //   options: {
-      //     resources: path.resolve(__dirname, '../src/style/_variables.scss')
-      //   }
-      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',

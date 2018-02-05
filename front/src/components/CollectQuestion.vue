@@ -22,7 +22,10 @@
 </template>
 
 <script>
-import NavBar from './common/NavBar.vue'
+import NavBar from '@/components/common/NavBar.vue'
+import axios from '@/utils/axios'
+// import question from '@/utils/urls'
+
 export default {
   name: 'CollectQuestion',
   data () {
@@ -39,12 +42,17 @@ export default {
     submit () {
       if (this.question) {
         console.log(this.question, this.answer)
+        axios.post('/collect', {
+          question: this.question,
+          answer: this.answer
+        })
       }
     }
   }
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
+// $theme-bck-color: #039be5;
 .question-collection {
   display: flex;
   flex-direction: column;
@@ -52,7 +60,6 @@ export default {
   align-items: center;
   color: #fff;
 }
-
 .main {
   margin-top: 100px;
 }
@@ -68,10 +75,11 @@ export default {
   width: 100%;
   height: 40px;
   line-height: 40px;
-  background-color: #039be5;
+  background-color: $theme-bck-color;
 }
 .text-area {
   display: flex;
+  flex-wrap: wrap;
   width: 80vw;
 }
 textarea {
@@ -91,7 +99,7 @@ textarea {
   height: 40px;
   line-height: 40px;
   border-radius: 5px;
-  background-color: #039be5;
+  background-color: $theme-bck-color;
   box-shadow: 0 2px 2px rgba(0,0,0,.26);
 }
 .btn:active {
