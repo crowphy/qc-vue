@@ -18,7 +18,7 @@ app.use(router.routes()).use(router.allowedMethods());
 router.post('/collect', (ctx, next) => {
   console.log(ctx.request.body);
   ctx.message = 'ok';
-  ctx.body = null;
+  ctx.body = 'success';
 });
 
-app.listen(3000);
+app.listen(4000);
